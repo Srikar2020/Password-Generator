@@ -27,8 +27,56 @@
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>
         </div>
+ <!--This is the Criteria pop up-->       
+        <div id="myDIV">
+
+          <h5 class="card-title"> Choose from these criteria for your password (must choose at least one type of character):</h5>
+    
+            <div class="form-group">
+              <label for="passLength">Length of password (between 8 and 128 characters)</label>
+              <input type="text" class="form-control" id="passLength" required>
+    
+            </div>
+    
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="specChars">
+                    <label class="form-check-label" for="specChars">
+                      Special characters
+                    </label>
+            </div>
+    
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="numChars">
+              <label class="form-check-label" for="numChars">
+                Numeric characters
+              </label>
+    
+            </div>
+    
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="lowChars">
+              <label class="form-check-label" for="lowChars">
+                Lowercase characters
+              </label>
+            </div>
+    
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="uppChars">
+              <label class="form-check-label" for="uppChars">
+                Uppercase characters
+              </label>
+            </div>
+            
+            <div class="footer">
+            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+            </div>
+
+        </div>
       </div>
     </div>
+    
+
+
     <script src="script.js"></script>
   </body>
 </html>
