@@ -14,7 +14,6 @@ var submitBtn = document.querySelector("#submit");
 function writePassword() {
   //var password = generatePassword();
   //var passwordText = document.querySelector("#password");
-  textarea.textContent = "kaialsh"
   //passwordText.value = password;
 
 }
@@ -31,13 +30,63 @@ function myFunction() {
 
 function submitFunction() {
   var passLength = document.getElementById("passLength").value;
-  
-  var checkbox = document.getElementsByClassName("form-check-input");
 
-  console.log("length: " + passLength);
-  console.log(checkbox);
+  var numChars = document.getElementById("numChars").checked;
+  var specChars = document.getElementById("specChars").checked;
+  var uppChars = document.getElementById("uppChars").checked;
+  var lowChars = document.getElementById("lowChars").checked;
+
+  // Testing userinput
+  //console.log("length: " + passLength);
+  //console.log(specChars);
+  //console.log(numChars);
+  //console.log(lowChars);
+  //console.log(uppChars);
+  
+  var selectedChars = [];
+  if (specChars){
+    selectedChars = selectedChars.concat(specialCharacters);
+  }
+
+  if (numChars){ 
+    selectedChars = selectedChars.concat(numericalCharacters);
+  }
+
+  if (lowChars) {
+    selectedChars = selectedChars.concat(lowercaseCharacters);
+  }
+
+  if (uppChars) {
+    selectedChars = selectedChars.concat(uppercaseCharacters);
+  }
+  
+  //console.log(selectedChars);
+
+  var output = "";
+
+
+  for (var i = 0; i < passLength; i++) {
+
+    var random = Math.floor(Math.random() * selectedChars.length);
+
+    //console.log(random, selectedChars[random])
+
+    output = output + selectedChars[random];
+
+    
+  }
+
+//console.log(output);
+textarea.textContent = output
+
 
 }
+
+
+
+
+
+
 
 
 
@@ -50,6 +99,8 @@ var numericalCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var lowercaseCharacters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 // Creates an array of uppercase characters.
 var uppercaseCharacters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+
 
 
 // Add event listener to generate button
