@@ -1,7 +1,7 @@
 # Password-Generator
 
 
-URL: 
+URL: https://srikar2020.github.io/Password-Generator/
 
 
 
